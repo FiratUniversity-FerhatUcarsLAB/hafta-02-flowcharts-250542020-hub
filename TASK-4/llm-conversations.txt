@@ -1,0 +1,91 @@
+Kullanıcı (Sen):
+
+“Üniversite Ders Kayıt Sistemi Sistem Açıklaması
+Öğrenci ders kayıt sisteminin tüm kontrollerini ve kurallarını modelleyin.
+
+Sistem Gereksinimleri:
+
+Öğrenci girişi (öğrenci no + şifre)
+
+Ders listesini görüntüleme (döngü)
+
+Her ders için:
+
+Kontenjan kontrolü (koşul)
+
+Ön koşul dersi kontrolü (koşul)
+
+Zaman çakışması kontrolü (koşul)
+
+Kredi limiti kontrolü (≤35)
+
+Danışman onayı gerekli mi? (GPA < 2.5 ise)
+
+Kayıt özeti gösterme ve onaylama
+
+İstenilenler:
+1️ Genel akışı açıkla
+2️ Kontrolleri listele
+3️ Pseudocode oluştur (iç içe EĞER–İSE yapıları ve döngülerle)
+4️ DOT dönüşümü yap (kontroller diamond olsun)”
+
+ ChatGPT (Ben):
+
+Sistemi adım adım modelledim:
+
+1️ Genel Yapı
+
+Öğrenci giriş yapar
+
+Ders listesi görüntülenir
+
+Seçim yapılır (ekleme/çıkarma)
+
+Her ders için tüm kontroller uygulanır
+
+Onay ve kayıt işlemi yapılır
+
+2️ Kontrol Mekanizmaları
+
+Kimlik doğrulama
+
+Kontenjan kontrolü
+
+Önkoşul kontrolü
+
+Zaman çakışması kontrolü
+
+Kredi limiti kontrolü (≤35)
+
+Danışman onayı kontrolü (GPA < 2.5)
+
+Kayıt özeti ve onay
+
+3️ Pseudocode
+
+Tamamen Türkçe, detaylı ve açıklamalı 100+ satırlık algoritma sundum.
+Tüm koşullar iç içe EĞER–İSE yapılarında; ders ekleme/çıkarma işlemleri döngüyle tekrarlanıyor.
+
+4️ DOT Koduna Dönüşüm
+
+Her kontrol noktası diamond (karar düğümü) olarak tanımlandı.
+Akış:
+Başla → Giriş → Menü → Ders Ekle/Çıkar → Kontroller → Özet → Onay → Kayıt → Bitir
+
+ Kullanıcı:
+
+6 satırlı özet çıkar.
+
+ ChatGPT:
+
+Kısa özet:
+1️ Öğrenci giriş yapar (öğrenci no + şifre).
+2️ Ders listesi görüntülenir; öğrenci ders ekler veya çıkarır.
+3️ Her ders için kontenjan, önkoşul, zaman çakışması ve kredi limiti kontrol edilir.
+4️ GPA < 2.5 olan öğrenciler için danışman onayı istenir.
+5️ Seçilen dersler listelenir, öğrenci onay verirse kayıt tamamlanır.
+6️ Onay sonrası sistem güncellenir ve çıkış yapılır.
+
+ Kullanıcı:
+
+Konuşma kaydını çıkar.
