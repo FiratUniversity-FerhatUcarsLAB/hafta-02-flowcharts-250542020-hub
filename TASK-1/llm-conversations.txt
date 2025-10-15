@@ -1,0 +1,24 @@
+Kullanıcı:
+Bir ATM’den para çekme işleminin tüm adımlarını modelleyin. Sistem Gereksinimleri: Kart takılır ve PIN sorulur, 3 hatalı PIN girişinden sonra kart bloke olur (döngü), bakiye sorgulanır, çekilmek istenen tutar girilir, yetersiz bakiye kontrolü yapılır (koşul), 20 TL’nin katları olmalı (koşul), günlük limit kontrolü (koşul), para verilir ve fiş çıkar, başka işlem yapmak ister misiniz? (döngü). Pseudocode oluşturma sonra DOT koduna çevirme.
+
+ChatGPT:
+(İlk olarak İngilizce ağırlıklı pseudocode ve Graphviz DOT kodu paylaştım.)
+
+Kullanıcı:
+PSEUDOCODE Türkçe yap.
+
+ChatGPT:
+ATM işlem adımlarını tamamen Türkçe olarak pseudocode biçiminde yeniden yazdım (başla–dur arası, koşullar ve döngülerle).
+
+Kullanıcı:
+Şimdi bunu 5-6 satırlık özet çıkar.
+
+ChatGPT:
+Kısa özet olarak 6 maddede ATM sürecinin temel adımlarını verdim (kart takma, PIN, bakiye, limit kontrolü, para verme, işlem tekrarı).
+
+Kullanıcı:
+LLM ile konuşma kayıtlarını çıkar.
+
+ChatGPT:
+(Şu an bu yanıt) — konuşmanın hem özetini hem tam metin kaydını paylaştım.
+
