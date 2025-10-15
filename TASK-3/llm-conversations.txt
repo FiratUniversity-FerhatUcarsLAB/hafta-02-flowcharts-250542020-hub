@@ -1,0 +1,102 @@
+Kullanıcı (Sen):
+
+Hastane Randevu ve Tahlil Sistemi Sistem Açıklaması
+Hastanede randevu alma ve tahlil sonuçlarına erişim sistemini modelleyin.
+Sistem Gereksinimleri:
+
+Hasta kimlik doğrulama (TC No)
+
+İşlem seçimi: 1-Randevu Al, 2-Tahlil Sonucu Gör (koşul)
+
+Randevu modülü: Poliklinik seçimi, doktor listesi, uygun saatler (döngü)
+
+Randevu onayı ve SMS gönderimi
+
+Tahlil modülü: Tahlil var mı kontrolü (koşul)
+
+Sonuç hazır mı kontrolü (koşul)
+
+Sonuç görüntüleme veya bekleme mesajı
+
+Sonuçları PDF indir seçeneği
+
+Başka işlem yapmak ister misiniz? (döngü)
+Modül 1 ve Modül 2 için pseudocode yaz, sonra birleştir, DOT kodunu da ekle.
+
+ ChatGPT (Ben):
+
+Üç bölümden oluşan kapsamlı yanıt verdim:
+1️ Modül 1: Randevu Alma
+2️ Modül 2: Tahlil Sonuçları Görüntüleme
+3️ Modül 3: Ana Menü – Modüllerin Birleşimi
+Her biri için Türkçe PSEUDOCODE yazdım ve ardından Graphviz DOT kodu oluşturdum.
+Ayrıca 6 satırlık kısa özet de ekledim.
+
+ Kullanıcı:
+
+Ver.
+
+ ChatGPT:
+
+Tüm modüllerin Türkçe kısa özetini verdim:
+
+TC kimlik doğrulama
+
+Menüden işlem seçimi
+
+Randevu alma akışı
+
+Tahlil sonucu kontrolü
+
+PDF indirme
+
+Ana menüye dönüş
+
+ Kullanıcı:
+
+“E-ticaret sitesinde sepet yönetimi ve ödeme sistemi” gibi bir örnekte yaptığın gibi, bunun da pseudocode’unu yaz.
+
+ ChatGPT:
+
+Tam detaylı Türkçe PSEUDOCODE yazdım:
+
+Kullanıcı TC kimlik doğrulaması
+
+İşlem seçimi
+
+Randevu alma süreci (doktor, saat, SMS)
+
+Tahlil sonucu sorgulama (hazır mı, PDF indirme)
+
+Döngüyle ana menüye dönüş
+Ayrıca açıklamalı yorum satırları ekledim.
+
+ Kullanıcı:
+
+Modülleri birleştir, tek sistem olsun.
+
+ ChatGPT:
+
+Randevu ve Tahlil modüllerini tek bir ana pseudocode içinde birleştirdim.
+TC kimlik doğrulama → Menü seçimi → Randevu veya Tahlil akışı → Döngü → Ana menü.
+Kısa özetini de ekledim.
+
+ Kullanıcı:
+
+Tam anlamlı birleştir, hiçbir şeyini bozma.
+
+ ChatGPT:
+
+Tam anlamlı, eksiksiz birleşik pseudocode yazdım:
+
+Randevu ve Tahlil modülleri tek akışta
+
+TC doğrulama, poliklinik seçimi, doktor listesi, saat seçimi
+
+Randevu onayı ve SMS gönderimi
+
+Tahlil sonucu kontrolü, hazır değilse bekleme, PDF seçeneği
+
+Döngüyle “başka işlem yapmak ister misiniz?” kısmı
+
+70+ satırlık, tamamen Türkçe, hiçbir kısaltma yapılmamış versiyon
