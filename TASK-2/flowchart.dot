@@ -1,0 +1,37 @@
+digraph Alisveris {
+    rankdir=TB;
+    node [shape=rectangle, style=rounded, fontname="Arial"];
+
+    Start [label="Başla"];
+    Login [label="Kullanıcı girişi"];
+    CheckLogin [label="Giriş doğru mu?"];
+    Browse [label="Ürün kategorilerinde gezin"];
+    SelectProduct [label="Ürün seç"];
+    StockCheck [label="Stokta var mı?"];
+    AddToCart [label="Sepete ekle"];
+    ViewCart [label="Sepeti görüntüle/düzenle"];
+    Discount [label="İndirim kodu var mı?"];
+    MinCheck [label="Tutar ≥ 50 TL mi?"];
+    CargoCheck [label="Tutar ≥ 200 TL mi? (Kargo ücreti)"];
+    Payment [label="Ödeme yöntemi seç"];
+    Confirm [label="Sipariş onayı"];
+    End [label="Bitiş"];
+
+    Start -> Login -> CheckLogin;
+    CheckLogin -> Browse [label="Evet"];
+    CheckLogin -> End [label="Hayır"];
+
+    Browse -> SelectProduct -> StockCheck;
+    StockCheck -> AddToCart [label="Evet"];
+    StockCheck -> Browse [label="Hayır"];
+
+    AddToCart -> ViewCart -> Discount;
+    Discount -> MinCheck;
+    MinCheck -> End [label="Hayır (<50)"];
+    MinCheck -> CargoCheck [label="Evet"];
+
+    CargoCheck -> Payment;
+    Payment -> Confirm [label="Geçerli"];
+    Payment -> End [label="Geçersiz"];
+    Confirm -> End;
+}
