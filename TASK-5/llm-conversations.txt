@@ -1,0 +1,38 @@
+Kullanıcı:
+
+“Akıllı Ev Güvenlik Sistemi
+IoT tabanlı alarm ve bildirim süreçlerini modelleyin.
+Sistem aktif mi kontrolü, sensör okuma döngüsü, hareket/kapı/pencere sensörleri, kamera aktivasyonu, yanlış alarm kontrolü, alarm seviyesi, bildirim gönderme ve alarm sıfırlama gereksinimlerini içermeli.
+Sürekli çalışan bir sistem için pseudocode yaz.”
+
+🤖 ChatGPT:
+
+Sistem için Türkçe pseudocode oluşturdum:
+
+Ana döngü: DO WHILE SİSTEM_AKTİF
+
+Sensör okuma, yanlış alarm kontrolü, tehdit değerlendirme, alarm yönetimi, bildirim gönderme ve bekleme süreçleri.
+
+Alarm seviyesine göre farklı aksiyonlar (kamera, bildirim, yetkili bilgilendirme) uygulanır.
+
+Alarm aktifken manuel veya otomatik sıfırlama ile devam veya durdurma.
+
+Ardından Graphviz DOT kodu olarak akış diyagramı oluşturdum:
+
+Karar noktaları (diamond): Sistem aktif mi, yanlış alarm, tehdit seviyesi, alarm sıfırlama
+
+Sürekli döngü ve sensör kontrol akışı gösterildi.
+
+Son olarak 6 satırlık özet çıkarıldı:
+
+Sistem 7/24 aktif çalışır ve sensörleri sürekli okur.
+
+Hareket, kapı/pencere ve diğer sensörler kontrol edilir.
+
+Yanlış alarm kontrolü ev sahibi veya manuel sıfırlama ile yapılır.
+
+Tehdit seviyesi 1-3 arasında belirlenir ve alarm aksiyonları tetiklenir.
+
+Alarm devam ederken sensörler tekrar kontrol edilir; manuel veya otomatik sıfırlama mümkündür.
+
+Bildirimler SMS, uygulama ve e-posta ile gönderilir; sistem kapatılana kadar döngü devam eder.
