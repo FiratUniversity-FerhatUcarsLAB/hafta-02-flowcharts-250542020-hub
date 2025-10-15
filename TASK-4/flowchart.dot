@@ -1,0 +1,83 @@
+digraph DersKayit {
+  rankdir=TB;
+  node [shape=box, fontname="Arial"];
+
+  Start [label="BAŞLA"];
+
+  Login [label="Öğrenci no + şifre al\n(ÖĞRENCİ GİRİŞİ)"];
+  AuthCheck [label="Kimlik doğrulandı mı?", shape=diamond];
+
+  Menu [label="İşlem seç: L=Listele, E=Ekle, C=Çıkar, B=Bitir"];
+  ShowList [label="Ders listesini göster"];
+  InputAdd [label="Eklenecek ders kodunu al"];
+  FindCourse [label="Ders bulunuyor mu?", shape=diamond];
+  QuotaCheck [label="Kontenjan dolu mu?", shape=diamond];
+  PreReqCheck [label="Önkoşullar tamam mı?", shape=diamond];
+  TimeConflict [label="Zaman çakışması var mı?", shape=diamond];
+  CreditCheck [label="Kredi limiti aşılıyor mu? (≤35)", shape=diamond];
+  AdvisorCheck [label="Danışman onayı gerekli mi ve alındı mı?", shape=diamond];
+  AddCourse [label="Dersi seçilenlere ekle\n(toplam kredi güncelle)"];
+
+  InputRemove [label="Çıkarılacak ders kodunu al"];
+  RemoveCourse [label="Dersten çıkar ve kredi azalt"];
+
+  Finish [label="Kayıt özetini göster"];
+  Confirm [label="Kayıt onaylansın mı? (E/H)", shape=diamond];
+
+  FinalCheckLoop [label="Her ders için kontenjan ve zaman\nkontrolü tekrar", shape=diamond];
+  Enroll [label="Kayıtları veritabanına ekle\n(kontenjan azalt)"];
+  Success [label="Kayıt başarılı\n(Bitiş)"];
+  Cancel [label="Kayıt iptal edildi\n(Bitiş)"];
+
+  End [label="DUR"];
+
+  /* Akış */
+  Start -> Login -> AuthCheck;
+  AuthCheck -> Menu [label="Evet"];
+  AuthCheck -> End [label="Hayır"];
+
+  Menu -> ShowList [label="L"];
+  Menu -> InputAdd [label="E"];
+  Menu -> InputRemove [label="C"];
+  Menu -> Finish [label="B"];
+
+  ShowList -> Menu;
+
+  /* Ders ekleme akışı */
+  InputAdd -> FindCourse;
+  FindCourse -> Menu [label="Hayır"];
+  FindCourse -> QuotaCheck [label="Evet"];
+
+  QuotaCheck -> Menu [label="Evet (dolu)"];
+  QuotaCheck -> PreReqCheck [label="Hayır (boş kontenjan)"];
+
+  PreReqCheck -> Menu [label="Hayır (önkoşul yok)"];
+  PreReqCheck -> TimeConflict [label="Evet (önkoşul OK)"];
+
+  TimeConflict -> Menu [label="Evet (çakışma)"];
+  TimeConflict -> CreditCheck [label="Hayır (çakışma yok)"];
+
+  CreditCheck -> Menu [label="Evet (limit aşıyor)"];
+  CreditCheck -> AdvisorCheck [label="Hayır (limit OK)"];
+
+  AdvisorCheck -> Menu [label="Hayır (onay yok)"];
+  AdvisorCheck -> AddCourse [label="Evet (onay var)"];
+
+  AddCourse -> Menu;
+
+  /* Ders çıkarma */
+  InputRemove -> RemoveCourse -> Menu;
+
+  /* Bitir ve onay akışı */
+  Finish -> Confirm;
+  Confirm -> FinalCheckLoop [label="Evet"];
+  Confirm -> Cancel [label="Hayır"];
+
+  FinalCheckLoop -> Enroll [label="Kontroller OK"];
+  FinalCheckLoop -> Cancel [label="Hata (kontenjan/cakışma)"];
+
+  Enroll -> Success -> End;
+  Cancel -> End;
+
+  Success -> End;
+}
