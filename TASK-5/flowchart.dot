@@ -1,0 +1,28 @@
+digraph AkilliEvGuvenlik {
+    rankdir=TB;
+    node [shape=box];
+
+    Basla [label="Sistem Başlat"];
+    SistemAktif [label="Sistem Aktif mi?", shape=diamond];
+    SensorOku [label="Tüm Sensörleri Oku"];
+    YanlisAlarmKontrol [label="Yanlış Alarm Kontrolü?", shape=diamond];
+    TehditSeviyesi [label="Tehdit Seviyesini Belirle", shape=diamond];
+    AlarmYonet [label="Alarm Aksiyonları"];
+    BekleKontrol [label="Bekle ve Sensörleri Yeniden Kontrol Et"];
+    AlarmSifirla [label="Alarm Sıfırlandı mı?", shape=diamond];
+    SistemKapali [label="Sistem Kapalı", shape=box];
+
+    # Akış
+    Basla -> SistemAktif;
+    SistemAktif -> SensorOku [label="Evet"];
+    SistemAktif -> SistemKapali [label="Hayır"];
+    SensorOku -> YanlisAlarmKontrol;
+    YanlisAlarmKontrol -> SensorOku [label="Evet (Yanlış alarm)"];
+    YanlisAlarmKontrol -> TehditSeviyesi [label="Hayır"];
+    TehditSeviyesi -> AlarmYonet [label="Tehdit var"];
+    TehditSeviyesi -> BekleKontrol [label="Tehdit yok"];
+    AlarmYonet -> BekleKontrol;
+    BekleKontrol -> AlarmSifirla;
+    AlarmSifirla -> SensorOku [label="Hayır"];
+    AlarmSifirla -> SensorOku [label="Evet"];
+}
