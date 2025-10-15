@@ -1,0 +1,42 @@
+digraph HastaneSistemi {
+
+    rankdir=LR;
+    node [shape=rectangle, style=rounded, fontname="Arial"];
+
+    subgraph cluster_AnaMenu {
+        label="Ana Menü";
+        color=lightblue;
+        "Giriş" -> "İşlem Seçimi";
+        "İşlem Seçimi" -> "Randevu Modülü" [label="1"];
+        "İşlem Seçimi" -> "Tahlil Modülü" [label="2"];
+        "İşlem Seçimi" -> "Çıkış" [label="3"];
+    }
+
+    subgraph cluster_Randevu {
+        label="Randevu Modülü";
+        color=lightgreen;
+        "TC Girişi" -> "TC Kontrolü";
+        "TC Kontrolü" -> "Poliklinik Seçimi" [label="Geçerli"];
+        "Poliklinik Seçimi" -> "Doktor Listesi";
+        "Doktor Listesi" -> "Uygun Saat Seçimi";
+        "Uygun Saat Seçimi" -> "Saat Kontrolü";
+        "Saat Kontrolü" -> "Randevu Onayı" [label="Müsait"];
+        "Randevu Onayı" -> "SMS Gönderimi";
+        "SMS Gönderimi" -> "Ana Menüye Dön";
+    }
+
+    subgraph cluster_Tahlil {
+        label="Tahlil Modülü";
+        color=lightpink;
+        "TC Girişi (Tahlil)" -> "TC Kontrolü (Tahlil)";
+        "TC Kontrolü (Tahlil)" -> "Tahlil Var mı?";
+        "Tahlil Var mı?" -> "Sonuç Hazır mı?" [label="Evet"];
+        "Sonuç Hazır mı?" -> "Sonucu Göster" [label="Evet"];
+        "Sonucu Göster" -> "PDF İndir?" [label="İsteğe bağlı"];
+        "PDF İndir?" -> "Ana Menüye Dön";
+        "Sonuç Hazır mı?" -> "Bekleme Mesajı" [label="Hayır"];
+        "Tahlil Var mı?" -> "Hata Mesajı" [label="Hayır"];
+    }
+
+    "Ana Menüye Dön" -> "İşlem Seçimi" [style=dashed];
+}
