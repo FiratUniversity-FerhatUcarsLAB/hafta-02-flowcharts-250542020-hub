@@ -1,0 +1,41 @@
+Kullanıcı:
+Online Alışveriş Sepet Sistemi Sistem Gereksinimleri:
+Kullanıcı giriş kontrolü (koşul)
+Ürün kategorileri arasında gezinme (döngü)
+Ürün sepete ekleme
+Stok kontrolü (koşul)
+Sepeti görüntüleme ve düzenleme (döngü)
+İndirim kodu uygulanabilir (koşul)
+Minimum 50 TL kontrolü (koşul)
+Kargo ücreti hesaplama (koşul: ≥200 TL ücretsiz)
+Ödeme yöntemi seçimi (koşul)
+Sipariş onayı
+Yukarıdaki bilgi aynı şekilde
+
+ChatGPT:
+Online Alışveriş Sepet Sistemi için detaylı Türkçe PSEUDOCODE ve Graphviz DOT kodu oluşturdum.
+Tüm sistem gereksinimlerini adım adım tanımladım (giriş kontrolü, stok, indirim, kargo, ödeme vb.).
+
+Kullanıcı:
+Ver. (Yani kısa özetini yazmamı istedi.)
+
+ChatGPT:
+Sistemin 5–6 satırlık kısa özetini paylaştım:
+
+Kullanıcı giriş yapar.
+
+Ürün seçer.
+
+Stok ve sepet kontrol edilir.
+
+İndirim ve minimum tutar kontrolü yapılır.
+
+Kargo hesaplanır.
+
+Ödeme ve sipariş onayıyla işlem tamamlanır.
+
+Kullanıcı:
+Aynı şekilde konuşma kaydını çıkar.
+
+ChatGPT:
+(Şu anki yanıt) – konuşmanın özetini ve tam metin kaydını verdim.
