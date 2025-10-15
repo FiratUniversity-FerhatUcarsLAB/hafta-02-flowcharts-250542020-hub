@@ -1,0 +1,40 @@
+250542020
+Ahmet Enes Altun
+
+digraph ATM {
+    rankdir=TB;
+    node [shape=rectangle, style=rounded, fontname="Arial"];
+
+    Start [label="Başla"];
+    InsertCard [label="Kart takılır"];
+    PinEntry [label="PIN gir"];
+    CheckPin [label="PIN doğru mu?"];
+    WrongPin [label="Hatalı PIN sayısını artır"];
+    BlockCard [label="3 hatalı giriş → Kart bloke"];
+    Balance [label="Bakiyeyi göster"];
+    EnterAmount [label="Tutar gir"];
+    CheckMultiple [label="20 TL'nin katı mı?"];
+    CheckBalance [label="Yetersiz bakiye?"];
+    CheckLimit [label="Günlük limit aşıldı mı?"];
+    Dispense [label="Para ver ve fiş çıkar"];
+    Another [label="Başka işlem ister misiniz?"];
+    End [label="Kart iade / Bitir"];
+
+    Start -> InsertCard -> PinEntry -> CheckPin;
+    CheckPin -> Balance [label="Evet"];
+    CheckPin -> WrongPin [label="Hayır"];
+    WrongPin -> PinEntry [label="Deneme < 3"];
+    WrongPin -> BlockCard [label="Deneme = 3"];
+    BlockCard -> End;
+
+    Balance -> EnterAmount -> CheckMultiple;
+    CheckMultiple -> EnterAmount [label="Hayır"];
+    CheckMultiple -> CheckBalance [label="Evet"];
+    CheckBalance -> EnterAmount [label="Evet"];
+    CheckBalance -> CheckLimit [label="Hayır"];
+    CheckLimit -> EnterAmount [label="Evet"];
+    CheckLimit -> Dispense [label="Hayır"];
+    Dispense -> Another;
+    Another -> Balance [label="Evet"];
+    Another -> End [label="Hayır"];
+}
